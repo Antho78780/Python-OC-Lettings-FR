@@ -4,4 +4,4 @@ from lettings.models import Letting
 def index(request):
     lettings_list = Letting.objects.all()
     context = {'lettings_list': lettings_list}
-    return render(request, 'lettings_index.html', context)
+    return render(request, 'lettings/index.html', context)
