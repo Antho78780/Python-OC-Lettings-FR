@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if IE 8 ]>
+<html class="no-js oldie ie8" lang="fr">
+<![endif]-->
+<!--[if IE 9 ]>
+<html class="no-js oldie ie9" lang="fr">
+	<![endif]-->
+	<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="fr">
+		<!--<![endif]-->
+<head>
+	<!--- Besoins de base de la page-->
+	<meta charset="utf-8">
+	<title>Erreur 404</title>
+	<link href="{% static 'img/Demo/favicon.png' %}" rel="shortcut icon"/>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Django 404 Page non trouvée (page not found)">
+	<meta name="author" content="oujood.com">
+	<!-- métas spécifiques aux mobiles -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+</head>
+<body>		
+	<!-- navigation
+	================================================== -->
+	
+	<nav>
+		<h5>Pages du site</h5>
+		<ul>
+			<li><a href="" title="">Home</a></li>
+			<li><a href="" title="">About</a></li>
+			<li><a href="" title="">Contact</a></li>
+		</ul>
+	</nav>
+
+	<!-- main content
+	================================================== -->
+	<main>
+		<div>
+			<h1>Erreur 404.</h1>
+			<p>
+				Oooooops ! l’erreur 404 signale que la ressource demandée n'a pas été trouvée.
+			</p>
+		</div>
+	</main>
+</body>
+</html>
