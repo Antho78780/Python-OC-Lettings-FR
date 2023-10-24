@@ -28,23 +28,28 @@
 	<nav>
 		<h5>Pages du site</h5>
 		<ul>
-			<li><a href="" title="">Home</a></li>
-			<li><a href="" title="">About</a></li>
-			<li><a href="" title="">Contact</a></li>
+			<li><a href="{% url 'index' %}" title="">Home</a></li>
+			<li><a href="{% url 'lettings_index' %}" title="">Lettings</a></li>
+			<li><a href="{% url 'profiles_index' %}" title="">Profiles</a></li>
 		</ul>
 	</nav>
 
 	<!-- main content
 	================================================== -->
 	<main>
+	<div>
 		<div>
-			<h1>Erreur 500.</h1>
-			<p>
-				Oooooops ! Le code de réponse d'erreur serveur HTTP 500 Internal Server Error
-				indique que le serveur a rencontré un problème inattendu qui l'empêche de répondre
-				à la requête. Cette réponse d'erreur est une réponse générique « fourre-tout ».
-			</p>
+			<div>
+				<h1>Erreur 500.</h1>
+				<p>
+					Oooooops ! L'erreur 500 signale que le serveur a rencontré un problème
+					inattendu qui l'empêche de répondre à la requête.
+				</p>
+			</div>				
 		</div>
+		<footer>										
+		</footer>
+	</div>
 	</main>
 </body>
 </html>

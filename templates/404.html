@@ -28,21 +28,27 @@
 	<nav>
 		<h5>Pages du site</h5>
 		<ul>
-			<li><a href="" title="">Home</a></li>
-			<li><a href="" title="">About</a></li>
-			<li><a href="" title="">Contact</a></li>
+			<li><a href="{% url 'index' %}" title="">Home</a></li>
+			<li><a href="{% url 'lettings_index' %}" title="">Lettings</a></li>
+			<li><a href="{% url 'profiles_index' %}" title="">Profiles</a></li>
 		</ul>
 	</nav>
 
 	<!-- main content
 	================================================== -->
 	<main>
+	<div>
 		<div>
-			<h1>Erreur 404.</h1>
-			<p>
-				Oooooops ! l’erreur 404 signale que la ressource demandée n'a pas été trouvée.
-			</p>
+			<div>
+				<h1>Erreur 404.</h1>
+				<p>
+					Oooooops ! L’erreur 404 signale que la ressource demandée n'a pas été trouvée. 
+				</p>
+			</div>				
 		</div>
+		<footer>										
+		</footer>
+	</div>
 	</main>
 </body>
 </html>
