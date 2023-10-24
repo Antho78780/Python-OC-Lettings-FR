@@ -41,3 +41,9 @@ def index(request):
 # laoreet neque quis, pellentesque dui. Nullam facilisis pharetra vulputate. Sed tincidunt,
 # dolor id facilisis fringilla, eros leo tristique lacus it. Nam aliquam dignissim congue.
 # Pellentesque habitant morbi tristique senectus et netus et males
+
+def error_404_view(request, exception):
+   return render(request, '404.html')
+
+def error_500_view(request, *args, **argv):
+    return render(request, '500.html')
