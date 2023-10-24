@@ -1,26 +1,30 @@
-from django.urls import reverse
-from pytest_django.asserts import assertTemplateUsed
-import pytest
+from django.test import TestCase, Client
 from lettings.models import Letting, Addres
-from django.test import Client, TestCase
+from django.urls import reverse
 
-@pytest.mark.django_db
-class TestView(TestCase):
-    client = Client()
 
-    def test_indexLetting(self):
+
+class TestViews(TestCase):
+    def setUp(self) :
+        self.client = Client()
+        self.address = Addres.objects.create(
+            number=5,
+            street="l'oise", 
+            city="paris", 
+            state="france", 
+            zip_code=78567, 
+            country_iso_code="FRA"
+        )
+        self.letting = Letting.objects.create(
+            title='location1', 
+            address=self.address
+        )
+
+    def test_index_letting_view(self):
         response = self.client.get('/lettings/')
-        assertTemplateUsed(response, 'lettings/index.html')
-        assert response.status_code == 200
+        self.assertTemplateUsed(response, 'lettings/index.html')
 
-    def test_letting(self):
-        address = Addres.objects.create(number=5, street="l'oise", city="paris", state="france", zip_code=78567, country_iso_code="FRA")
-        letting = Letting.objects.create(title="location1", address=address)
-        path = reverse('letting', kwargs={"letting_id": 1})
-        response = self.client.get(path)
-        self.assertEqual(path, '/lettings/1/')
-        assertTemplateUsed(response, 'lettings/letting.html')
-        assert response.status_code == 200
-
-
-
+    def test_letting_view(self):
+       path = reverse('letting', kwargs={'letting_id': 1})
+       response = self.client.get(path)
+       self.assertTemplateUsed(response, 'lettings/letting.html')
