@@ -16,9 +16,14 @@ jobs:
     # See: https://circleci.com/docs/configuration-reference/#steps
     steps:
       - checkout
+      - python/install-packages:
+              pkg-manager: pip
+      # - run:
+      #     name: "Say hello"
+      #     command: "echo Hello, World!"
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
+          name: Run tests
+          command: python -m pytest
 
 # Orchestrate jobs using workflows
 # See: https://circleci.com/docs/configuration-reference/#workflows
