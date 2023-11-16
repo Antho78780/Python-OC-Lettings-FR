@@ -15,6 +15,9 @@ jobs:
       - run:
           name: Run coverage report
           command: coverage report
+    docker:
+      - image: cimg/base:stable
+    
 workflows:
   build_and_test_deploy:
     jobs:
