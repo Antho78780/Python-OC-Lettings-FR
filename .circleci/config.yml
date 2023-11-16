@@ -12,7 +12,9 @@ jobs:
       - run:
           name: Run tests
           command: coverage run -m pytest
-          command: coverage report
+      - run:
+          name: Run coverage report
+          command: coverage run
 workflows:
   build_and_test_deploy:
     jobs:
