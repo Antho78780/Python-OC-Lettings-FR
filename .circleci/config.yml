@@ -17,11 +17,10 @@ jobs:
     steps:
       - checkout
       - python/install-packages:
-        pkg-manager: pip
-     
+          pkg-manager: pip
       - run:
-        name: Run tests
-        command: python -m pytest
+          name: Run tests
+          command: python -m pytest
 
       # - run:
       #     name: "Say hello"
