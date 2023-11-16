@@ -3,7 +3,7 @@ orbs:
   python: circleci/python@2.1.1
 
 jobs:
-  say-hello: # this can be any name you choose
+  build_and_test: # this can be any name you choose
     executor: python/default # use the default executor defined within the orb
     steps:
       - checkout # checkout source code
@@ -17,9 +17,9 @@ jobs:
           paths:
             - .
 workflows:
-  say-hello-workflow:
+  build_and_test_deploy:
     jobs:
-      - say-hello
+      - build-test
 
 
 
