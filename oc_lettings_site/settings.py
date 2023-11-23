@@ -111,7 +111,7 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR, 'static']
+STATICFILES_DIRS = [BASE_DIR / 'static',]
 
 sentry_sdk.init(
     dsn="https://d7b082990a6645e05ddb1606d8eb28f6@o4506060795740160.ingest.sentry.io/4506060797509632",
