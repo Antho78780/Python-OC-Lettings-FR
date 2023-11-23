@@ -2,4 +2,5 @@
 *.pyc
 env
 .env
+oc-lettings-site.sqlite3
 
