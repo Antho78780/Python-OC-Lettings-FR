@@ -3,7 +3,7 @@ orbs:
   python: circleci/python@2.1.1
 
 jobs:
-  build_and_test: # this can be any name you choose
+  test: # this can be any name you choose
     executor: python/default # use the default executor defined within the orb
     steps:
       - checkout # checkout source code
@@ -15,11 +15,19 @@ jobs:
       - run:
           name: Run coverage report
           command: coverage report
-    
+  build:
+    docker:
+      - image: python:3.10.9-alpine
+    steps:
+     - checkout
+
 workflows:
-  build_and_test_deploy:
+  test_deploy:
     jobs:
-      - build_and_test
+      - test
+  build_deploy:
+    jobs:
+      - build
 
 
 
