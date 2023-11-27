@@ -21,10 +21,7 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-     - run:
-        docker push antho78780/letting_test:latest
-
-
+  
 workflows:
   test_deploy:
     jobs:
