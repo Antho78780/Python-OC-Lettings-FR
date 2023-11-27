@@ -19,10 +19,10 @@ jobs:
     docker:
       - image: python:3.10.9-alpine
     steps:
-     - checkout
-     - setup_remote_docker
+      - checkout
+      - setup_remote_docker
      - run:
-      docker push antho78780/letting_test:latest
+        docker push antho78780/letting_test:latest
 
 
 workflows:
