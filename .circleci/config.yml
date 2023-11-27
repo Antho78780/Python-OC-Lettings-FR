@@ -22,6 +22,8 @@ jobs:
       - checkout
       - setup_remote_docker
       - run:
+          docker build -t antho78780/letting_test:latest
+      - run:
           docker push antho78780/letting_test:latest
   
 workflows:
