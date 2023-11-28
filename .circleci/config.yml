@@ -26,7 +26,7 @@ jobs:
     - setup_remote_docker
     - run:
         name: build_docker
-        command: build -t antho78780/letting_test2:latest .
+        command: docker build -t antho78780/letting_test2:latest .
       
   
 workflows:
