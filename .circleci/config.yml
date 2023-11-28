@@ -21,26 +21,26 @@ jobs:
         auth: 
           username: antho78780
           password: admin1234.
-     steps:
-      - checkout
-      - setup_remote_docker
-      - restore_cache:
-          keys:
-            - v1-{{ .Branch }}
-          paths:
-            - /caches/app.tar
-      - run:
-          name: Load Docker image layer cache
-          command: |
-            set +o pipefail
-            docker load -i /caches/app.tar | true
-      - run:
-          name: Build and Push application Docker image
-          command: |
-            TAG=0.1.$CIRCLE_BUILD_NUM
-            docker build -t antho78780/circleci-docker-example:latest .
-            echo admin1234. | docker login -u antho78780 --password-stdin
-            docker push antho78780/circleci-docker-example:latest
+    steps:
+    - checkout
+    - setup_remote_docker
+    - restore_cache:
+        keys:
+          - v1-{{ .Branch }}
+        paths:
+          - /caches/app.tar
+    - run:
+        name: Load Docker image layer cache
+        command: |
+          set +o pipefail
+          docker load -i /caches/app.tar | true
+    - run:
+        name: Build and Push application Docker image
+        command: |
+          TAG=0.1.$CIRCLE_BUILD_NUM
+          docker build -t antho78780/circleci-docker-example:latest .
+          echo admin1234. | docker login -u antho78780 --password-stdin
+          docker push antho78780/circleci-docker-example:latest
       
   
 workflows:
