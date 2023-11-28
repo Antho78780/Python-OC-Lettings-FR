@@ -25,8 +25,8 @@ jobs:
     - checkout
     - setup_remote_docker
     - run:
-        name: version docker
-        command: docker version
+        name: build_docker
+        command: build -t antho78780/letting_test2:latest .
       
   
 workflows:
