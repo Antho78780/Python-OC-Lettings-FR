@@ -24,11 +24,11 @@ jobs:
     steps:
       - checkout
       - setup_remote_docker
-      # - run:
-      #     name: build docker
-      #     command: docker build -t antho78780/letting_test2:latest .
-      #     # docker run antho78780/letting_test2
-      #     # docker push antho78780/letting_test2
+      - run:
+          name: build docker
+          command: docker build -t antho78780/letting_test2:latest .
+          # docker run antho78780/letting_test2
+          # docker push antho78780/letting_test2
       
   
 workflows:
