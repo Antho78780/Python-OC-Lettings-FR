@@ -19,7 +19,7 @@ jobs:
     docker:
       - image: cimg/base:2022.09
         auth: 
-          username: antho7878
+          username: $USERNAME
           password: admin1234.
     steps:
       - checkout
