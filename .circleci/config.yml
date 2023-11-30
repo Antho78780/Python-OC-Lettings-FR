@@ -41,10 +41,6 @@ jobs:
             echo $PASSWORD | docker login -u $USERNAME --password-stdin
             docker push antho78780/circleci-docker-example:latest  
 workflows:
-  filters:
-    branches:
-      only:
-        - master
   test_pytest:
     jobs:
       - test_with-pytest
@@ -52,6 +48,10 @@ workflows:
     jobs:
       - build:
           context: authentications
+          filters:
+            branches:
+              only:
+                - master
 
 
 
