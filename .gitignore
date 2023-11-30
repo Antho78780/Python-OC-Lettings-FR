@@ -3,4 +3,5 @@
 env
 .env
 oc-lettings-site.sqlite3
+.coverage
 
