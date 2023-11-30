@@ -14,7 +14,7 @@ jobs:
           command: coverage run -m pytest
       - run:
           name: Run coverage report
-          command: coverage report --fail-under=80
+          command: coverage report --fail-under=100
   build:
     docker:
       - image: cimg/base:2022.09
