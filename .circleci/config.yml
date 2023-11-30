@@ -20,7 +20,7 @@ jobs:
       - image: cimg/base:2022.09
         auth: 
           username: $USERNAME
-          password: admin1234.
+          password: $PASSWORD
     steps:
       - checkout
       - setup_remote_docker
