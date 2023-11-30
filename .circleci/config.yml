@@ -44,14 +44,21 @@ workflows:
   test_pytest:
     jobs:
       - test_with-pytest
-  build_deploy:
-    jobs:
       - build:
           context: authentications
           filters:
             branches:
               only:
                 - master
+
+  # build_deploy:
+  #   jobs:
+  #     - build:
+  #         context: authentications
+  #         filters:
+  #           branches:
+  #             only:
+  #               - master
 
 
 
