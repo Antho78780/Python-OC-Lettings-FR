@@ -75,3 +75,8 @@ Utilisation de PowerShell, comme ci-dessus sauf :
 
 - Pour activer l'environnement virtuel, `.\venv\Scripts\Activate.ps1` 
 - Remplacer `which <my-command>` par `(Get-Command <my-command>).Path`
+
+### Test et couverture des tests
+
+- Pour exécuter tous les tests, `pytest`
+- Pour exécuter la couverture des tests, `coverage run -m pytest` et `coverage report -m`
