@@ -20,7 +20,7 @@ jobs:
       - image: cimg/base:2022.09
         auth: 
           username: $USERNAME
-          password: wesh
+          password: $PASSWORD
     steps:
       - checkout
       - setup_remote_docker
