@@ -26,7 +26,7 @@ jobs:
       - setup_remote_docker
       - restore_cache:
           keys:
-            - v1-{{ .Branch }}
+            - v1-{{ .master }}
           paths:
             - /caches/app.tar
       - run:
