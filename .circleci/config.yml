@@ -46,6 +46,8 @@ workflows:
       - test_with-pytest
       - build:
           context: authentications
+          requires:
+            - test_with-pytest
           filters:
             branches:
               only:
