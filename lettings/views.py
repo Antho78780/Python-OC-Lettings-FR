@@ -3,14 +3,14 @@ from lettings.models import Letting
 
 
 def index(request):
-    """Return the request, the gabarit and the context which contains the list of profiles."""
+    """la fonction index renvoie la requête, le gabarit et le context  qui contient la liste des locations."""
     lettings_list = Letting.objects.all()
     context = {'lettings_list': lettings_list}
     return render(request, 'lettings/index.html', context)
 
 
 def letting(request, letting_id):
-    """Return the request, the gabarit and the context which contains the profile."""
+    """La fonction letting renvoie la requête, le gabarit et le context qui contient la location."""
     letting = Letting.objects.get(id=letting_id)
     context = {
         'title': letting.title,
