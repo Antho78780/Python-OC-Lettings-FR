@@ -16,6 +16,23 @@ Pour installer tout les packages utilieer la commande
 
     (.venv) pip install -r requirements.txt
 
+
+Lancement
+---------
+
+Pour actualiser les modèles dans la base de donnée utiliser la commande
+
+.. code-block:: console
+
+    (.venv) python manage.py migrate
+
+Pour lancer le serveur utiliser la commande
+
+.. code-block:: console
+
+    (.venv) python manage.py runserver --insecure
+
+
 Tests
 -----
 
@@ -42,18 +59,3 @@ Pour une présentation plus agréable, utiliser la commande
 .. code-block:: console
 
     (.venv) coverage html
-
-Creating recipes
-----------------
-
-To retrieve a list of random ingredients,
-you can use the ``lumache.get_random_ingredients()`` function:
-
-.. py:function:: lumache.get_random_ingredients(kind=None)
-
-   Return a list of random ingredients as strings.
-
-   :param kind: Optional "kind" of ingredients.
-   :type kind: list[str] or None
-   :return: The ingredients list.
-   :rtype: list[str]

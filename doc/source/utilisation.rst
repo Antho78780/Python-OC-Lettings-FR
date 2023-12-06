@@ -16,6 +16,23 @@ Pour installer tout les packages utilieer la commande
 
     (.venv) pip install -r requirements.txt
 
+
+Lancement
+---------
+
+Pour actualiser les modèles dans la base de donnée utiliser la commande
+
+.. code-block:: console
+
+    (.venv) python manage.py migrate
+
+Pour lancer le serveur utiliser la commande
+
+.. code-block:: console
+
+    (.venv) python manage.py runserver --insecure
+
+
 Tests
 -----
 
