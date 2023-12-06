@@ -1,13 +1,13 @@
 from django.shortcuts import render
 
 def index(request):
-    """Return the request and the gabarit"""
+    """La fonction index renvoie la requête et le gabarit"""
     return render(request, 'index.html')
 
 def error_404_view(request, exception):
-    """Return the request and the gabarit for generate the error."""
+    """La fonction error404 renvoie la requête et le gabarit pour générer l'erreur."""
     return render(request, '404.html')
 
 def error_500_view(request, *args, **argv):
-    """ Return the request object and the gabarit for generate the error."""
+    """La fonction error500 renvoie la requête et le gabarit pour générer l'erreur."""
     return render(request, '500.html')
