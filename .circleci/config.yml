@@ -52,16 +52,3 @@ workflows:
             branches:
               only:
                 - master
-
-  # build_deploy:
-  #   jobs:
-  #     - build:
-  #         context: authentications
-  #         filters:
-  #           branches:
-  #             only:
-  #               - master
-
-
-
-
