@@ -2,6 +2,7 @@
 *.pyc
 env
 .env
+.vscode
 oc-lettings-site.sqlite3
 .coverage
 
