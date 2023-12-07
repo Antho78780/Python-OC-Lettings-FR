@@ -58,4 +58,11 @@ workflows:
             branches:
               only:
                 - master
-      - deploy
+      - deploy:
+          requires:
+            - test_with-pytest
+          filters:
+            branches:
+              only:
+                - master
+
