@@ -40,6 +40,12 @@ jobs:
             docker build -t antho78780/circleci-docker-example:latest .
             echo $PASSWORD | docker login -u $USERNAME --password-stdin
             docker push antho78780/circleci-docker-example:latest  
+  deploy:
+    steps: 
+      - checkout
+      - run:
+          name: deploy oc_lettings_site
+          command: curl https://api.render.com/deploy/srv-clogd6h46foc73a0bbn0?key=eg0zs3WiYow
 workflows:
   test_pytest:
     jobs:
@@ -52,3 +58,4 @@ workflows:
             branches:
               only:
                 - master
+      - deploy:
