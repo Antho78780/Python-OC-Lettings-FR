@@ -15,7 +15,7 @@ jobs:
       - run:
           name: Run coverage report
           command: coverage report --fail-under=80
-  build:
+  build_and_deploy:
     docker:
       - image: cimg/base:2022.09
         auth: 
@@ -40,17 +40,13 @@ jobs:
             docker build -t antho78780/circleci-docker-example:latest .
             echo $PASSWORD | docker login -u $USERNAME --password-stdin
             docker push antho78780/circleci-docker-example:latest  
-  deploy:
-    steps: 
-      - checkout
-      - run:
-          name: deploy oc_lettings_site
-          command: curl https://api.render.com/deploy/srv-clogd6h46foc73a0bbn0?key=eg0zs3WiYow
+            curl https://api.render.com/deploy/srv-clogd6h46foc73a0bbn0?key=eg0zs3WiYow
+
 workflows:
   test_pytest:
     jobs:
       - test_with-pytest
-      - build:
+      - build_and_deploy:
           context: authentications
           requires:
             - test_with-pytest
@@ -58,11 +54,3 @@ workflows:
             branches:
               only:
                 - master
-      - deploy:
-          requires:
-            - test_with-pytest
-          filters:
-            branches:
-              only:
-                - master
-
