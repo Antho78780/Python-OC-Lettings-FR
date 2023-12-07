@@ -115,10 +115,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'static',]
-if DEBUG:
-    STORAGES = 'django.contrib.staticfiles.storage.StaticFilesStorage'
-else:
-    STORAGES = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 sentry_sdk.init(
     dsn=os.environ.get('SENTRY_DSN'),
