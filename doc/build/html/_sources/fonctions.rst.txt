@@ -1,0 +1,13 @@
+Fonctions
+=========
+
+Les vues pour l'application lettings
+------------------------------------
+
+.. py:function:: index(request)
+
+    On va récuperer la liste des locations grace à la fonction all
+    letting_list = letting.object.all()
+    on va ensuite créer un context
+    context = {'lettings_list': lettings_list}
+    et on va renvoyer notre requête avec notre template index.html et notre context

@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Bienvenue dans la documentation du site Orange Country Lettings ! &#8212; Documentation oc_letting_site_doc 0.0.1</title>
+    <title>Fonctions &#8212; Documentation oc_letting_site_doc 0.0.1</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="_static/classic.css?v=514cf933" />
     
@@ -16,7 +16,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Utilisation" href="utilisation.html" /> 
+    <link rel="prev" title="Utilisation" href="utilisation.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
@@ -26,9 +26,9 @@
              accesskey="I">index</a></li>
         <li class="right" >
           <a href="utilisation.html" title="Utilisation"
-             accesskey="N">suivant</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">Documentation oc_letting_site_doc 0.0.1</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Bienvenue dans la documentation du site Orange Country Lettings !</a></li> 
+             accesskey="P">précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Documentation oc_letting_site_doc 0.0.1</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Fonctions</a></li> 
       </ul>
     </div>  
 
@@ -37,23 +37,21 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="bienvenue-dans-la-documentation-du-site-orange-country-lettings">
-<h1>Bienvenue dans la documentation du site Orange Country Lettings !<a class="headerlink" href="#bienvenue-dans-la-documentation-du-site-orange-country-lettings" title="Link to this heading">¶</a></h1>
-<p><strong>Orange Country lettings</strong> est une start-up dans le secteur de la location de biens immobiliers. La start-up est en pleine phase d’expansion aux États-Unis.</p>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="utilisation.html">Utilisation</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="utilisation.html#installation">Installation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilisation.html#lancement">Lancement</a></li>
-<li class="toctree-l2"><a class="reference internal" href="utilisation.html#tests">Tests</a></li>
-</ul>
-</li>
-</ul>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Ce projet est en cours de développement actif.</p>
-</div>
+  <section id="fonctions">
+<h1>Fonctions<a class="headerlink" href="#fonctions" title="Link to this heading">¶</a></h1>
+<section id="les-vues-pour-l-application-lettings">
+<h2>Les vues pour l’application lettings<a class="headerlink" href="#les-vues-pour-l-application-lettings" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="index">
+<span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#index" title="Link to this definition">¶</a></dt>
+<dd><p>On va récuperer la liste des locations grace à la fonction all
+letting_list = letting.object.all()
+on va ensuite créer un context
+context = {“lettings_list”: lettings_list}
+et on va renvoyer notre requête avec notre template index.html et notre context</p>
+</dd></dl>
+
+</section>
 </section>
 
 
@@ -64,14 +62,27 @@
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <div>
-    <h4>Sujet suivant</h4>
+    <h3><a href="index.html">Table des matières</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Fonctions</a><ul>
+<li><a class="reference internal" href="#les-vues-pour-l-application-lettings">Les vues pour l’application lettings</a><ul>
+<li><a class="reference internal" href="#index"><code class="docutils literal notranslate"><span class="pre">index()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Sujet précédent</h4>
     <p class="topless"><a href="utilisation.html"
-                          title="Chapitre suivant">Utilisation</a></p>
+                          title="Chapitre précédent">Utilisation</a></p>
   </div>
   <div role="note" aria-label="source link">
     <h3>Cette page</h3>
     <ul class="this-page-menu">
-      <li><a href="_sources/index.rst.txt"
+      <li><a href="_sources/fonctions.rst.txt"
             rel="nofollow">Montrer le code source</a></li>
     </ul>
    </div>
@@ -97,9 +108,9 @@
              >index</a></li>
         <li class="right" >
           <a href="utilisation.html" title="Utilisation"
-             >suivant</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">Documentation oc_letting_site_doc 0.0.1</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Bienvenue dans la documentation du site Orange Country Lettings !</a></li> 
+             >précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Documentation oc_letting_site_doc 0.0.1</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Fonctions</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">

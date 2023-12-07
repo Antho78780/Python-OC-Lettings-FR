@@ -59,3 +59,4 @@ Pour une présentation plus agréable, utiliser la commande
 .. code-block:: console
 
     (.venv) coverage html
+
