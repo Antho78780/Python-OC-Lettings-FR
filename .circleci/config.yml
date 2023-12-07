@@ -3,10 +3,10 @@ orbs:
   python: circleci/python@2.1.1
 
 jobs:
-  test_with-pytest: # this can be any name you choose
-    executor: python/default # use the default executor defined within the orb
+  test_with-pytest:
+    executor: python/default
     steps:
-      - checkout # checkout source code
+      - checkout
       - python/install-packages:
           pkg-manager: pip
       - run:
@@ -15,7 +15,7 @@ jobs:
       - run:
           name: Run coverage report
           command: coverage report --fail-under=80
-  build_and_deploy:
+  build:
     docker:
       - image: cimg/base:2022.09
         auth: 
@@ -40,13 +40,21 @@ jobs:
             docker build -t antho78780/circleci-docker-example:latest .
             echo $PASSWORD | docker login -u $USERNAME --password-stdin
             docker push antho78780/circleci-docker-example:latest  
-            curl https://api.render.com/deploy/srv-clogd6h46foc73a0bbn0?key=eg0zs3WiYow
+  deploy:
+    docker:
+    - image: cimg/base:2022.09
+    steps:
+      - checkout
+      - run:
+          name: deploy img
+          command: curl https://api.render.com/deploy/srv-clogd6h46foc73a0bbn0?key=eg0zs3WiYow
+    
 
 workflows:
-  test_pytest:
+  test:
     jobs:
       - test_with-pytest
-      - build_and_deploy:
+      - build:
           context: authentications
           requires:
             - test_with-pytest
@@ -54,3 +62,6 @@ workflows:
             branches:
               only:
                 - master
+      - deploy: 
+          requires:
+            - build
