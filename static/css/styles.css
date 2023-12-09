@@ -2617,7 +2617,6 @@ textarea.form-control-lg {
 .form-select[multiple], .form-select[size]:not([size="1"]) {
   padding-right: 1.125rem;
   background-image: none;
-  background-image: url('../assets/img/backgrounds/bg-waves.svg');
 }
 .form-select:disabled {
   background-color: #e0e5ec;
