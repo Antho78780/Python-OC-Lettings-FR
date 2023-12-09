@@ -20,7 +20,7 @@ jobs:
           command: coverage report --fail-under=80
   build:
     docker:
-      - image: cimg/base:2022.09
+      - image: cimg/base:2023.04
         auth: 
           username: $USERNAME
           password: $PASSWORD
@@ -45,7 +45,7 @@ jobs:
             docker push antho78780/circleci-docker-example:latest  
   deploy:
     docker:
-    - image: cimg/base:2022.09
+    - image: cimg/base:2023.04
     steps:
       - checkout
       - run:
