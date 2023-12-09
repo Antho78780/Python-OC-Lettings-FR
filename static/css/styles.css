@@ -10,6 +10,7 @@
  * Copyright 2011-2021 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
 :root {
   --bs-blue: #a22b02;
   --bs-indigo: #5800e8;
@@ -2616,6 +2617,7 @@ textarea.form-control-lg {
 .form-select[multiple], .form-select[size]:not([size="1"]) {
   padding-right: 1.125rem;
   background-image: none;
+  background-image: url('../assets/img/backgrounds/bg-waves.svg');
 }
 .form-select:disabled {
   background-color: #e0e5ec;
