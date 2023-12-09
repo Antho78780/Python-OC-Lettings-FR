@@ -14,7 +14,7 @@ RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 # copie des fichiers statics
-RUN python manage.py collectstatic --noinput
+RUN python manage.py collectstatic --no-input
 
 # Mise à jour de la base de donnée
 RUN python manage.py migrate
