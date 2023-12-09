@@ -9,7 +9,7 @@ jobs:
       - checkout
       - python/install-packages:
           pkg-manager: pip
-      -run:
+      - run:
           name: install dependance 
           command: pip install -r requirements.txt
       - run:
