@@ -9,6 +9,9 @@ jobs:
       - checkout
       - python/install-packages:
           pkg-manager: pip
+      - run: 
+          name: test
+          command: python manage.py collectstatic
       - run:
           name: Run tests
           command: coverage run -m pytest
