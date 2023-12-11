@@ -37,9 +37,9 @@ jobs:
       - run:
           name: Build and Push application Docker image
           command: |
-            docker build -t antho78780/circleci-docker-example:latest .
+            docker build -t antho78780/letting_test:latest .
             echo $PASSWORD | docker login -u $USERNAME --password-stdin
-            docker push antho78780/circleci-docker-example:latest  
+            docker push antho78780/letting_test:latest  
   deploy:
     docker:
     - image: cimg/base:2023.04
@@ -47,7 +47,7 @@ jobs:
       - checkout
       - run:
           name: deploy img
-          command: curl https://api.render.com/deploy/srv-clrho9qe9h4c73b0i9f0?key=nbhO8Exa-8U
+          command: curl https://api.render.com/deploy/srv-clrhubbh3k0c73aj5iqg?key=EzUtgo2hl_s
     
 
 workflows:
