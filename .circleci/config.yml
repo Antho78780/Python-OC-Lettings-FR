@@ -47,7 +47,7 @@ jobs:
       - checkout
       - run:
           name: deploy img
-          command: curl https://api.render.com/deploy/srv-clogd6h46foc73a0bbn0?key=eg0zs3WiYow
+          command: curl https://api.render.com/deploy/srv-clrho9qe9h4c73b0i9f0?key=nbhO8Exa-8U
     
 
 workflows:
