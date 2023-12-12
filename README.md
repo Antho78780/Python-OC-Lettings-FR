@@ -76,7 +76,6 @@ Utilisation de PowerShell, comme ci-dessus sauf :
 - Pour activer l'environnement virtuel, `.\venv\Scripts\Activate.ps1` 
 - Remplacer `which <my-command>` par `(Get-Command <my-command>).Path`
 
-### Test et couverture des tests
+### Accéder à la doc
+- Pour accéder à la documentation coller dans la barre de recherche `https://python-oc-lettings-fr-doc.readthedocs.io/fr/latest/`
 
-- Pour exécuter tous les tests, `pytest`
-- Pour exécuter la couverture des tests, `coverage run -m pytest` et `coverage report -m`
