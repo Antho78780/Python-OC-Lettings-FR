@@ -1,5 +1,6 @@
 from django.test import TestCase, Client
 
+
 class TestViews(TestCase):
     cient = Client()
 
@@ -10,6 +11,6 @@ class TestViews(TestCase):
         response = self.client.get('')
         self.assertTemplateUsed(response, 'index.html')
         self.assertEqual(response.status_code, 200)
-    
+
     def test_error_404_view(self):
         pass
