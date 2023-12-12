@@ -54,9 +54,15 @@ Pour vour les resultats de la couverture de test vous pouvez utiliser la command
 
     (.venv) coverage report
 
-Pour une présentation plus agréable, utiliser la commande
+Pour une présentation plus agréable de la couverture des tests, utiliser la commande
 
 .. code-block:: console
 
     (.venv) coverage html
+
+Pour vérifier que flake8 ne renvoie aucune erreur utiliser la commande
+
+.. code-block:: console
+
+    (.venv) flake8 lettings profiles oc_lettings_site
 
