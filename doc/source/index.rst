@@ -5,7 +5,10 @@ Bienvenue dans la documentation du site Orange Country Lettings !
 
 .. toctree::
    utilisation
+   models
+   views
    :maxdepth: 2
 
 .. note::
    Ce projet est en cours de développement actif.
+   

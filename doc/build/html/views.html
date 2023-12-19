@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html lang="fr" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Views &#8212; Documentation oc_letting_site_doc 0.0.1</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css?v=514cf933" />
+    
+    <script src="_static/documentation_options.js?v=5cd26065"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=d99ca74e"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="prev" title="Models" href="models.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Index général"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="models.html" title="Models"
+             accesskey="P">précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Documentation oc_letting_site_doc 0.0.1</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Views</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="views">
+<h1>Views<a class="headerlink" href="#views" title="Link to this heading">¶</a></h1>
+<section id="views-lettings">
+<h2>Views lettings<a class="headerlink" href="#views-lettings" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="index_letting">
+<span class="sig-name descname"><span class="pre">index_letting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#index_letting" title="Link to this definition">¶</a></dt>
+<dd><p>La vue index_letting va permettre d’afficher la liste des locations sur la page des locations</p>
+<p><code class="docutils literal notranslate"><span class="pre">letting_list</span> <span class="pre">=</span> <span class="pre">Letting.objects.all()</span></code> est la liste des locations</p>
+<p><code class="docutils literal notranslate"><span class="pre">context</span> <span class="pre">=</span> <span class="pre">{letting_list:</span> <span class="pre">letting_list}</span></code> est un dictionnaire qui va contenir la liste des locations et qui va être envoyé dans la template <code class="docutils literal notranslate"><span class="pre">lettings/index.html</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">render()</span></code> est la fonction qui va renvoyé la requête, le context et la template ce qui va donner <code class="docutils literal notranslate"><span class="pre">render(request,</span> <span class="pre">context,</span> <span class="pre">lettings/index.html)</span></code></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="letting">
+<span class="sig-name descname"><span class="pre">letting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">letting_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#letting" title="Link to this definition">¶</a></dt>
+<dd><p>La vue letting permet à un utilisateur d’afficher une location en particulier</p>
+<p><code class="docutils literal notranslate"><span class="pre">letting</span> <span class="pre">=</span> <span class="pre">Letting.objects.get(id=letting_id)</span></code> est la location</p>
+<p><code class="docutils literal notranslate"><span class="pre">context</span> <span class="pre">=</span> <span class="pre">{title:</span> <span class="pre">letting.title,</span> <span class="pre">address:</span> <span class="pre">letting.address}</span></code> est un dictionnaire qui va contenir le titre la location et l’adresse de la location</p>
+<p><code class="docutils literal notranslate"><span class="pre">render()</span></code> est la fonction qui va renvoyé la requête, le context et la template ce qui va donner <code class="docutils literal notranslate"><span class="pre">render(request,</span> <span class="pre">context,</span> <span class="pre">lettings/letting.html)</span></code></p>
+</dd></dl>
+
+</section>
+<section id="views-profiles">
+<h2>Views profiles<a class="headerlink" href="#views-profiles" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="index_profile">
+<span class="sig-name descname"><span class="pre">index_profile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#index_profile" title="Link to this definition">¶</a></dt>
+<dd><p>La vue index_profile va permettre d’afficher la liste des profiles sur la page profiles</p>
+<p><code class="docutils literal notranslate"><span class="pre">profile_list</span> <span class="pre">=</span> <span class="pre">Profile.objects.all()</span></code> est la liste des profiles</p>
+<p><code class="docutils literal notranslate"><span class="pre">context</span> <span class="pre">=</span> <span class="pre">{profile_list:</span> <span class="pre">profile_list}</span></code> est un dictionnaire qui va contenir la la liste des profiles est qui va être envoyé dans la template <code class="docutils literal notranslate"><span class="pre">lettings/index.html</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">render()</span></code> est la fonction qui va renvoyé la requête, le context et la template ce qui va donner <code class="docutils literal notranslate"><span class="pre">render(request,</span> <span class="pre">context,</span> <span class="pre">profiles/index.html)</span></code></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="profile">
+<span class="sig-name descname"><span class="pre">profile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#profile" title="Link to this definition">¶</a></dt>
+<dd><p>La vue profile permet à un utilisateur d’afficher un profile en particulier</p>
+<p><code class="docutils literal notranslate"><span class="pre">profile</span> <span class="pre">=</span> <span class="pre">Profile.objects.get(id=username_id)</span></code> est le profile de l’utilisateur</p>
+<p><code class="docutils literal notranslate"><span class="pre">context</span> <span class="pre">=</span> <span class="pre">{profile:</span> <span class="pre">profile}</span></code> est un dictionnaire qui va contenir le profile de l’utilisateur</p>
+<p><code class="docutils literal notranslate"><span class="pre">render()</span></code> est la fonction qui va renvoyé la requête, le context et la template ce qui va donner <code class="docutils literal notranslate"><span class="pre">render(request,</span> <span class="pre">context,</span> <span class="pre">lettings/letting.html)</span></code></p>
+</dd></dl>
+
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table des matières</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Views</a><ul>
+<li><a class="reference internal" href="#views-lettings">Views lettings</a><ul>
+<li><a class="reference internal" href="#index_letting"><code class="docutils literal notranslate"><span class="pre">index_letting()</span></code></a></li>
+<li><a class="reference internal" href="#letting"><code class="docutils literal notranslate"><span class="pre">letting()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#views-profiles">Views profiles</a><ul>
+<li><a class="reference internal" href="#index_profile"><code class="docutils literal notranslate"><span class="pre">index_profile()</span></code></a></li>
+<li><a class="reference internal" href="#profile"><code class="docutils literal notranslate"><span class="pre">profile()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Sujet précédent</h4>
+    <p class="topless"><a href="models.html"
+                          title="Chapitre précédent">Models</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>Cette page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/views.rst.txt"
+            rel="nofollow">Montrer le code source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Index général"
+             >index</a></li>
+        <li class="right" >
+          <a href="models.html" title="Models"
+             >précédent</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Documentation oc_letting_site_doc 0.0.1</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Views</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2023, Anthony.
+      Créé en utilisant <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+  </body>
+</html>
