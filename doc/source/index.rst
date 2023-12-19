@@ -7,6 +7,7 @@ Bienvenue dans la documentation du site Orange Country Lettings !
    utilisation
    models
    views
+   urls
    :maxdepth: 2
 
 .. note::
