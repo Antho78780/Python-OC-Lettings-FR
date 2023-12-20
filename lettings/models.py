@@ -12,12 +12,12 @@ class Addres(models.Model):
     country_iso_code = models.CharField(max_length=3, validators=[MinLengthValidator(3)])
 
     def __str__(self):
-        return f'{self.number} {self.street}'
+        return f'{self.number} {self.street}' 
     
     class Meta:
         db_table = 'oc_lettings_site_address'
 
-        
+
 class Letting(models.Model):
     """La classe représente le modèle d'une location"""
     title = models.CharField(max_length=256)
