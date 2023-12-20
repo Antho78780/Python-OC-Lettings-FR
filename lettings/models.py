@@ -15,6 +15,7 @@ class Addres(models.Model):
         return f'{self.number} {self.street}' 
     
     class Meta:
+        managed = False
         db_table = 'oc_lettings_site_address'
 
 
@@ -27,4 +28,5 @@ class Letting(models.Model):
         return  self.title
     
     class Meta:
+        managed = False
         db_table = 'oc_lettings_site_letting'
